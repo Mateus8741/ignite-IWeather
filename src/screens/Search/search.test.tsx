@@ -17,6 +17,9 @@ describe("Screen: Search", () => {
     const searchInput = screen.getByTestId("search-input");
     fireEvent.changeText(searchInput, "São Paulo");
 
-    await waitFor(() => expect(screen.findByText(/são paulo/i, {}, {timeout: 3000})).toBeTruthy());
+    await waitFor(() => expect(screen.findByText(/são paulo/i, {}, { timeout: 3000 })).toBeTruthy());
+    
+
+    // await waitFor(() => expect(screen.findByText(/rio do sul/i, {}, { timeout: 3000 })).toBeTruthy);
   });
 });
