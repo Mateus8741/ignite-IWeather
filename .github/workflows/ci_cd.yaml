@@ -40,8 +40,12 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          package: npm
+          token: ${{ secrets.EAS_EXPO_TOKEN }}
 
-      - name: Run tests with coverage
-        run: npm test
+      - name: Build
+        run: eas build --platform android --non-interactive --profile preview --no-interactive --no-wait
