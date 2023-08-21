@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "codewaveds",
     "name": "iweather",
     "slug": "iweather",
     "version": "1.0.0",
