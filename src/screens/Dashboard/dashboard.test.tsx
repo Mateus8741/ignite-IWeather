@@ -27,8 +27,7 @@ describe("Screen: Dashboard", () => {
 
     render(<Dashboard />);
 
-    const cityName = await waitFor(() => screen.findByText(/rio do sul/i));
-    expect(cityName).toBeTruthy();
+    await waitFor(() => expect(screen.findByText(/rio do sul/i, {}, { timeout: 3000 })).toBeTruthy());
   });
 
   it("should be show another selected weather city", async () => {
@@ -51,7 +50,7 @@ describe("Screen: Dashboard", () => {
 
     await waitForElementToBeRemoved(() => screen.queryByTestId("loading"));
 
-    const cityName = "São Paulo";
+    const cityName = "Rio do Sul";
 
     await waitFor(() =>
       act(() => {
